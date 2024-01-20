@@ -7,7 +7,8 @@ const userSchema = mongoose.Schema(
       password: { type: String, required: true },
       enrolled: [
          {
-            complete: { type: Number, default: 0 },
+            status: { type: String, default: "In Progress" },
+            complete: { type: Number, default: 10 },
             dueDate: { type: String },
             course: { type: mongoose.Types.ObjectId, ref: "Courses" },
          },
