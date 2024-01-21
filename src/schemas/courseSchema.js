@@ -12,7 +12,8 @@ const courseSchema = mongoose.Schema({
    syllabus: { type: Array, required: true },
    students: { type: Number, required: true },
    description: { type: String, required: true },
-   price: { type: String, required: true },
+   price: { type: Number, required: true },
+   like: { type: Number, default: 0 },
 });
 
 // Course model

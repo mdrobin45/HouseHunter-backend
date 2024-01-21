@@ -9,7 +9,10 @@ const markAsComplete = async (req, res) => {
             "enrolled.course": courseId,
          },
          {
-            $set: { "enrolled.$.status": "completed" },
+            $set: {
+               "enrolled.$.status": "completed",
+               "enrolled.$.complete": 100,
+            },
          }
       );
       res.status(200).send(response);
