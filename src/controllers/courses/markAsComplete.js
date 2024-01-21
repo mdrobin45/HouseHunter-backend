@@ -3,11 +3,16 @@ const UserModel = require("../../schemas/userSchema");
 const markAsComplete = async (req, res) => {
    try {
       const { email, courseId } = req.query;
-      const user = await UserModel.findOne({
-         email,
-         enrolled: { $elementMatch: { corse: courseId } },
-      });
-      res.status(200).send(user);
+      const response = await UserModel.updateOne(
+         {
+            email,
+            "enrolled.course": courseId,
+         },
+         {
+            $set: { "enrolled.$.status": "completed" },
+         }
+      );
+      res.status(200).send(response);
    } catch (err) {
       console.log(err);
       res.status(500).json({ error: "Internal server error" });
