@@ -1,6 +1,8 @@
 ## Course Listing Backend
 
-This is the backend for `Course Listing` project. You will find the frontend [here](https://github.com/mdrobin45/CourseListing-frontend)## Run Locally
+This is the backend for `Course Listing` project. You will find the frontend [here](https://github.com/mdrobin45/CourseListing-frontend)
+
+## Run Locally
 
 Clone the project
 
@@ -19,6 +21,7 @@ Install dependencies
 ```bash
 npm install
 ```
+
 #### Environment Variables
 
 To run this project, you will need to add the following environment variables to your `.env` file
@@ -42,6 +45,7 @@ Open project folder in terminal and run following command
 ```bash
   nodemon start
 ```
+
 ## Used Technology
 
 **Server:** Express Js, Mongoose
