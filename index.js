@@ -7,8 +7,8 @@ const cors = require("cors");
 const database = require("./src/database");
 const rootRoute = require("./src/routes/root");
 const authRoute = require("./src/routes/authentication");
-const courseRoute = require("./src/routes/course");
 const userRoute = require("./src/routes/user");
+const houseRoute = require("./src/routes/house");
 require("dotenv").config();
 
 // Use middleware
@@ -27,7 +27,7 @@ database();
 // application routes
 app.use("/", rootRoute);
 app.use("/auth", authRoute);
-app.use("/course", courseRoute);
+app.use("/house", houseRoute);
 app.use("/users", userRoute);
 
 // Listen server

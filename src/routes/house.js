@@ -6,28 +6,17 @@ const getById = require("../controllers/courses/getById");
 const enrollCourse = require("../controllers/courses/enrollCourse");
 const markAsComplete = require("../controllers/courses/markAsComplete");
 const updateLike = require("../controllers/courses/updateLike");
-const courseRoute = express.Router();
-
-// Sort courses
-courseRoute.get("/sort", sortCourses);
+const addHouse = require("../controllers/house/addHouse");
+const houseRoute = express.Router();
 
 // Get course by id
-courseRoute.get("/:id", getById);
+houseRoute.get("/:id", getById);
 
-// Get courses
-courseRoute.get("/", getCourses);
+// add new house
+houseRoute.post("/add-new", addHouse);
 
 // Insert multiple courses
-courseRoute.post("/multiple", insertMultiple);
-
-// Enroll course
-courseRoute.post("/enroll", enrollCourse);
-
-// Make course mark as compete
-courseRoute.put("/complete", markAsComplete);
-
-// Update like
-courseRoute.put("/like", updateLike);
+houseRoute.post("/multiple", insertMultiple);
 
 // Export route
-module.exports = courseRoute;
+module.exports = houseRoute;
