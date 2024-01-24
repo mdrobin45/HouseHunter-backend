@@ -1,8 +1,9 @@
-const CourseModel = require("../../schemas/courseSchema");
+const HouseModel = require("../../schemas/houseSchema");
+
 const insertMultiple = async (req, res) => {
    try {
-      const courseDetails = req.body;
-      await CourseModel.insertMany(courseDetails);
+      const houseData = req.body;
+      await HouseModel.insertMany(houseData);
       res.status(201).json({ message: "Course inserted" });
    } catch (err) {
       console.log(err);

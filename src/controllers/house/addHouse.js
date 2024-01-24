@@ -2,8 +2,8 @@ const HouseModel = require("../../schemas/houseSchema");
 
 const addHouse = async (req, res) => {
    try {
-      const houseData = req.body;
-      await HouseModel.insertMany(houseData);
+      const { houseData } = req.body;
+      await HouseModel(houseData).save();
       res.status(201).json({ message: "House added" });
    } catch (err) {
       console.log(err);

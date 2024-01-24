@@ -1,8 +1,9 @@
-const CourseModel = require("../../schemas/courseSchema");
+const HouseModel = require("../../schemas/houseSchema");
+
 const getById = async (req, res) => {
    try {
       const { id } = req.params;
-      const response = await CourseModel.findById(id);
+      const response = await HouseModel.findById(id);
       res.status(201).send(response);
    } catch (err) {
       console.log(err);
